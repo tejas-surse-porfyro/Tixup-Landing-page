@@ -1,690 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Tixup - Powered by Porfyro</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: SoftLand
-  * Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiXup - Smart Ticket Reselling Marketplace</title>
+    <link rel="icon" href="assets/images/logo.png">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#fb6b7b',secondary:'#8B5CF6',accent:'#0d6efd'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #fef2f2 0%, #fce7e9 100%); }
+        .phone-mockup { 
+            perspective: 1000px; 
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        .phone-inner {
+            background: #1a1a1a;
+            border-radius: 2.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .phone-screen {
+            border-radius: 2rem;
+            overflow: hidden;
+            aspect-ratio: 9/19.5;
+            width: 280px;
+            background: #fff;
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .section-animate { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .section-animate.visible { opacity: 1; transform: translateY(0); }
+        .phone-slide-left { transform: translateX(-100px) rotateY(15deg); }
+        .phone-slide-right { transform: translateX(100px) rotateY(-15deg); }
+        .navbar-blur { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8); }
+    </style>
 </head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <img src="assets/img/logo.png" alt="logo" height="80px">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-         
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-</header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    
-    <section id="hero" class="hero section dark-background">
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out">
-            <img src="assets/img/phone_1.png" alt="Phone 1" class="phone-1">
-            <img src="assets/img/phone_2.png" alt="Phone 2" class="phone-2">
-          </div>
-          <div class="col-lg-8 d-flex flex-column justify-content-center align-items text-center text-md-start" data-aos="fade-up">
-            <h2>Tixup</h2>
-            <p>The Smart Marketplace for Reselling Event
-Tickets. Unlocking Access. Empowering Fans.
-Maximizing Value.</p>
-            <div class="d-flex mt-4 justify-content-center justify-content-md-start">
-              <a href="#" class="download-btn"><i class="bi bi-google-play"></i> <span>Google Play</span></a>
-              <a href="#" class="download-btn"><i class="bi bi-apple"></i> <span>App Store</span></a>
+<body>
+    <nav class="fixed top-0 left-0 right-0 z-50 navbar-blur border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="font-['Pacifico'] text-2xl text-primary">
+                    <img src="assets/images/logo.png" alt="logo" style="max-width: 200px; max-height: 80px; width: auto; height: auto;" />
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300">Services</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center text-gray-700">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-
-    <section id="about" class="about section">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row align-items-xl-center gy-5">
-      <div class="col-xl-5 content">
-        <h3>Our Vision</h3>
-        <h2>Revolutionizing Event Ticket Reselling</h2>
-        <p>Our vision is to revolutionize the way people buy and sell event tickets by making the process seamless, secure, and accessible for everyone. We empower fans with a trusted platform where changing plans never means wasted tickets, and every transaction is protected from fraud and uncertainty. By combining intuitive technology with robust safeguards, Porfyro is redefining ticket reselling: easy for users, safe for everyone.</p>
-        <p><strong>To make ticket reselling effortless and trustworthy, so every ticket finds its true fan.</strong></p>
-        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-      </div>
-
-      <div class="col-xl-7">
-        <div class="row gy-4 icon-boxes">
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
-              <i class="bi bi-ticket-perforated"></i>
-              <h3>Wasted Tickets</h3>
-              <p>In the fast-paced Asia-Pacific region, millions of event-goers forfeit tickets yearly due to last-minute changes, leading to lost money and empty seats.</p>
+        <div id="mobile-menu" class="md:hidden bg-white/90 backdrop-blur-sm absolute top-16 left-0 right-0 max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out flex flex-col items-center space-y-0 py-0" style="transition-property: max-height;">
+            <div class="w-full">
+                <a href="#home" class="block w-full text-center text-gray-700 hover:text-primary transition-colors duration-300 py-2">Home</a>
+                <a href="#about" class="block w-full text-center text-gray-700 hover:text-primary transition-colors duration-300 py-2">About</a>
+                <a href="#services" class="block w-full text-center text-gray-700 hover:text-primary transition-colors duration-300 py-2">Services</a>
+                <a href="#contact" class="block w-full text-center text-gray-700 hover:text-primary transition-colors duration-300 py-2">Contact</a>
             </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <i class="bi bi-shield-exclamation"></i>
-              <h3>Lack of Secure Platforms</h3>
-              <p>The lack of secure, user-friendly resale platforms exposes users to scams, unreliable transactions, and no buyer protection.</p>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon-box">
-              <i class="bi bi-exclamation-triangle"></i>
-              <h3>Fraud and Unfair Pricing</h3>
-              <p>Fraudulent activities, bots, and fake accounts drive up prices and increase the risk of counterfeit tickets, undermining trust.</p>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon-box">
-              <i class="bi bi-ticket-detailed"></i>
-              <h3>Our Solution: Tixup</h3>
-              <p>Tixup is a user-centric platform for seamless, secure ticket reselling, eliminating hassles and risks for concerts, sports, movies, and more.</p>
-            </div>
-          </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Featured Section -->
-    <section id="featured" class="featured section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Market Gaps & Pain Points</h2>
-<p>
-  A substantial number of tickets go unused every year because buyers’ plans change and there is no easy, trusted way to resell them. This leads to lost money for fans and empty seats at events.
-</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-     <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-
-  <div class="col-md-4">
-    <div class="card">
-      <div class="img">
-        <img src="assets/img/cards-4.png" alt="" class="img-fluid">
-        <div class="icon"><i class="bi bi-ticket-perforated"></i></div>
-      </div>
-      <h2 class="title">Ticket Wastage</h2>
-      <p>
-        A substantial number of tickets go unused every year because buyers' plans change and there is no easy, trusted way to resell them. This leads to lost money for fans and empty seats at events.
-      </p>
-    </div>
-  </div>
-  <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card">
-      <div class="img">
-        <img src="assets/img/cards-2.png" alt="" class="img-fluid">
-        <div class="icon"><i class="bi bi-shield-exclamation"></i></div>
-      </div>
-      <h2 class="title">Fraud and Trust Issues</h2>
-      <p>
-        Fraudulent activities, counterfeit tickets, and unfair scalping practices undermine consumer trust. Bots and automated software often buy tickets in bulk, leading to inflated prices and limited access for real fans.
-      </p>
-    </div>
-  </div>
-  <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card">
-      <div class="img">
-        <img src="assets/img/cards-6.png" alt="" class="img-fluid">
-        <div class="icon"><i class="bi bi-exclamation-triangle"></i></div>
-      </div>
-      <h2 class="title">Lack of Transparency</h2>
-      <p>
-        Inconsistent regulation and a lack of transparency in pricing and ticket authenticity remain major concerns, especially in fragmented or unregulated markets. This creates risk and uncertainty for buyers and sellers.
-      </p>
-    </div>
-  </div>
-  </div>
-
-      </div>
-
-    </section><!-- /Featured Section -->
-
-    <!-- Cards Section -->
-    <section id="cards" class="cards section">
-
-      <div class="container">
-
-        <div class="text-center mb-4 steps-img" data-aos="zoom-out">
-          <img src="assets/img/steps.svg" alt="">
         </div>
+    </nav>
+  
+    <section id="home" class="min-h-screen mt-5 flex items-center relative overflow-hidden bg-gradient-to-r from-pink-100 to-red-100">
+        <div class="max-w-7xl mx-auto px-6 py-20 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                        <span class="text-primary">Tixup</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        The Smart Marketplace for Reselling Event Tickets. Unlocking Access. Empowering Fans. Maximizing Value.
+                    </p>
+                    <button class="bg-primary text-white px-8 py-4 !rounded-button font-semibold hover:bg-red-600 transition-colors duration-300 whitespace-nowrap">
+                        Get Started Today
+                    </button>
+                </div>
+                <div class="flex justify-center lg:justify-start relative">
+                    <div class="relative w-[300px] h-[600px] lg:ml-[180px] mr-0 lg:mr-10">
+                        <div class="phone-mockup absolute top-0 left-0 transform rotate-[-8deg] translate-x-[-40px] scale-95 z-0">
+                            <div class="phone-inner">
+                                <div class="phone-screen" style="background-image: url('assets/images/2.png'); background-size: cover; background-position: center;"></div>
+                            </div>
+                        </div>
+                        <div class="phone-mockup absolute top-0 left-0 transform rotate-[8deg] translate-x-[40px] z-10">
+                            <div class="phone-inner">
+                                <div class="phone-screen" style="background-image: url('assets/images/1.png'); background-size: cover; background-position: center;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="row gy-4">
+    <section id="about" class="min-h-screen flex items-center py-20 bg-gradient-to-r from-purple-100 to-pink-100">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center section-animate">
+                <div class="flex justify-center lg:justify-start order-2 lg:order-1">
+                    <div class="phone-mockup" id="about-phone">
+                        <div class="phone-inner">
+                            <div class="phone-screen" style="background-image: url('assets/images/1754547391652.png'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8 order-1 lg:order-2">
+                    <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Our Solution
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        <span class="font-bold">Tixup</span> is a user-centric ticket reselling platform designed to eliminate the hassles and risks of secondary ticket sales. Whether it’s a last-minute plan change or a sold-out event, <span class="font-bold">Tixup</span> empowers users to seamlessly buy and sell tickets for concerts, sports, movies, comedy shows, and more—all in one <span class="font-bold">secure marketplace</span>.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700"><span class="font-bold">Effortless Listing & Buying:</span> Instantly post tickets for sale or discover available tickets for any event with just a few taps.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700"><span class="font-bold">Fraud Prevention:</span> Advanced verification and secure payment systems ensure every transaction is genuine and protected.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700"><span class="font-bold">Real-Time Updates:</span> Stay in the loop with notifications about the latest events, trending shows, and exclusive deals.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700"><span class="font-bold">Dispute Resolution:</span> Dedicated support and a transparent dispute process safeguard both buyers and sellers.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700"><span class="font-bold">Comprehensive Oversight:</span> An admin dashboard tracks all activities, ensuring platform integrity and user trust.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="card-item">
-      <span>01</span>
-      <h4>Regulatory Complexity</h4>
-      <p>
-        Ticket resale is subject to varying laws and restrictions in different states and countries, with some regions banning or tightly controlling secondary sales. Navigating this requires a robust and adaptable platform.
-      </p>
-    </div>
-  </div>
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card-item">
-      <span>02</span>
-      <h4>Market Fragmentation</h4>
-      <p>
-        The landscape is crowded with both large players (StubHub, Viagogo) and numerous smaller, regional platforms. Our challenge is to stand out by offering a superior, more secure user experience.
-      </p>
-    </div>
-  </div>
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card-item">
-      <span>03</span>
-      <h4>Reputation Risks</h4>
-      <p>
-        Negative experiences due to fraud or poor customer support can quickly damage a platform’s reputation and hinder growth. We mitigate this with transparent processes and dedicated support.
-      </p>
-    </div>
-  </div>
-  </div>
+    <section class="min-h-screen flex items-center py-20 bg-gradient-to-r from-blue-100 to-pink-100">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center section-animate">
+                <div class="space-y-8">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
+                        Market Size & Growth
+                        <span class="text-primary">Opportunities</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        The <b>ticket reselling market</b> is growing fast, fueled by <b>live events</b> and <b>digital platforms</b>. Tixup makes it <b>easy</b> and <b>secure</b> to tap into this vibrant market.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center bg-white rounded-lg p-4 shadow-md">
+                            <div class="text-3xl font-bold text-primary">$89.7B</div>
+                            <div class="text-gray-600">Growth (2025-2029)</div>
+                        </div>
+                        <div class="text-center bg-white rounded-lg p-4 shadow-md">
+                            <div class="text-3xl font-bold text-primary">$69.25B</div>
+                            <div class="text-gray-600">Online Ticketing by 2029</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Global Reach</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Untapped Segments</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Technological Innovation</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Rising Demand for Live Events</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-accent rounded-full">
+                                <i class="ri-check-line text-white text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Digitalization & Mobile Penetration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <div class="phone-mockup" id="innovation-phone">
+                        <div class="phone-inner">
+                            <div class="phone-screen" style="background-image: url('assets/images/1754547391829.png'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      </div>
+    <section id="key-features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded mb-4">Key Features</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Seamless, Secure, and Intuitive Ticketing
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+                Whether you’re selling, buying, or managing tickets — Tixup delivers unmatched convenience and reliability.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 text-blue-500">
+                        <ion-icon name="add-circle-outline" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Effortless Ticket Posting</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        List tickets in seconds with guided steps that ensure smooth transactions.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 text-blue-500">
+                        <ion-icon name="cart-outline" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure Ticket Buying</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Browse, filter, and buy tickets with safe payments and instant delivery.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 text-purple-500">
+                        <ion-icon name="notifications-outline" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Stay Updated</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Get event recommendations and real-time alerts so you never miss out.
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 text-red-500">
+                        <ion-icon name="shield-checkmark-outline" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Dispute Resolution</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Protects buyers and sellers with secure escrow and transparent support.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 mx-auto mb-4 text-yellow-500">
+                        <ion-icon name="speedometer-outline" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Admin Dashboard</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Monitor activity, resolve disputes, and ensure marketplace integrity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </section><!-- /Cards Section -->
+    <section id="services" class="py-20 bg-gradient-to-r from-pink-100 to-purple-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From buyer protection to personalized recommendations, Tixup ensures trust, transparency, and engagement in every transaction.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-48 h-96 mx-auto mb-6 border-4 border-black rounded-2xl overflow-hidden bg-white">
+                        <img src="assets/images/buyer.png" alt="Buyer Protection" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Buyer Protection & Dispute Resolution</h3>
+                    <p class="text-gray-600 text-sm">
+                        Secure payment escrow and guaranteed ticket authenticity with transparent dispute resolution.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-48 h-96 mx-auto mb-6 border-4 border-black rounded-2xl overflow-hidden bg-white">
+                        <img src="assets/images/transparent.png" alt="Transparent Pricing" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Transparent Pricing & Community</h3>
+                    <p class="text-gray-600 text-sm">
+                        All fees are clearly shown upfront—no hidden costs, building trust and loyalty. We also gather feedback to continuously enhance the platform.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-48 h-96 mx-auto mb-6 border-4 border-black rounded-2xl overflow-hidden bg-white">
+                        <img src="assets/images/realtime.png" alt="Real-Time Updates" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Real-Time Updates</h3>
+                    <p class="text-gray-600 text-sm">
+                        AI-driven recommendations and instant alerts for trending events, price drops, and new listings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="features" class="features section">
+    <section id="contact" class="py-20 bg-gradient-to-r from-red-100 to-blue-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12 section-animate">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Partner with Tixup</h2>
+                <p class="text-xl text-gray-600">
+                    Have tickets to sell, events to promote, or ideas to improve the platform? Let’s connect and make every event unforgettable.
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-lg section-animate">
+                <form action="assets/contact.php" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="full_name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" placeholder="John Doe" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all duration-300">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Type here ..." required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all duration-300 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-4 !rounded-button font-semibold hover:bg-red-600 transition-colors duration-300 whitespace-nowrap">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Features</h2>
-    <p>Tixup offers a seamless, secure, and intuitive experience for every user, whether they're selling, buying, or managing event tickets.</p>
-  </div><div class="container">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="mb-4">
+                        <a href="#top">
+                            <img src="assets/images/logo.png" alt="Tixup Logo" class="h-24">
+                        </a>
+                    </div>
+                    <p class="text-gray-400">
+                        Tixup - Secure, transparent, and engaging ticketing solutions for every event.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.facebook.com/people/Porfyro/61570856312824/?mibextid=wwXIfr&rdid=qIl7z5Z96ZrMmAga&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F162YpV4z7H%2F%3Fmibextid%3DwwXIfr" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-white hover:bg-primary hover:border-primary transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-white hover:bg-primary hover:border-primary transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/porfyro_/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-white hover:bg-primary hover:border-primary transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/porfyro" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-white hover:bg-primary hover:border-primary transition-colors">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-primary transition-colors">Buyer Protection</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Transparent Pricing</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Real-Time Updates</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Community Engagement</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#top" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Our Services</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="terms.html" class="hover:text-primary transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Tixup | Powered by <a href="https://porfyro.com" target="_blank" class="text-primary hover:underline">Porfyro</a></p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="row gy-4 align-items-center features-item">
-      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-        <img src="assets/img/features-1.svg" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-        <h3>Effortless Ticket Posting</h3>
-        <p class="fst-italic">
-          Quickly list your unwanted tickets for sale with our easy-to-use interface.
-        </p>
-        <ul>
-          <li><i class="bi bi-check"></i><span> Users can upload ticket details and set their price in minutes.</span></li>
-          <li><i class="bi bi-check"></i> <span>Smart prompts guide sellers through the process for a smooth transaction.</span></li>
-          <li><i class="bi bi-check"></i> <span>Ensures all necessary information is captured for potential buyers.</span></li>
-        </ul>
-      </div>
-    </div><div class="row gy-4 align-items-center features-item">
-      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-        <img src="assets/img/features-2.svg" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-        <h3>Simple, Secure Ticket Buying</h3>
-        <p class="fst-italic">
-          Find and purchase the perfect ticket with confidence, knowing every transaction is protected.
-        </p>
-        <ul>
-          <li><i class="bi bi-check"></i> <span>Browse a curated feed of available tickets with advanced filters and search.</span></li>
-          <li><i class="bi bi-check"></i> <span>Secure payment processing and instant ticket delivery.</span></li>
-          <li><i class="bi bi-check"></i> <span>Purchase with peace of mind thanks to our robust buyer protection.</span></li>
-        </ul>
-      </div>
-    </div><div class="row gy-4 align-items-center features-item">
-      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-        <img src="assets/img/features-3.svg" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7" data-aos="fade-up">
-        <h3>Stay Updated on the Latest Events</h3>
-        <p>Never miss out on your favorite shows with personalized event tracking and notifications.</p>
-        <ul>
-          <li><i class="bi bi-check"></i> <span>Personalized event recommendations based on your preferences and location.</span></li>
-          <li><i class="bi bi-check"></i><span> Real-time notifications for trending shows, price drops, and newly listed tickets.</span></li>
-          <li><i class="bi bi-check"></i> <span>Integrated event calendar keeps you in the loop about what’s happening near you.</span></li>
-        </ul>
-      </div>
-    </div><div class="row gy-4 align-items-center features-item">
-      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
-        <img src="assets/img/features-4.svg" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
-        <h3>Robust Dispute Resolution</h3>
-        <p class="fst-italic">
-          Our platform is built on trust, with dedicated systems to protect both buyers and sellers.
-        </p>
-        <ul>
-          <li><i class="bi bi-check"></i> <span>A built-in system for reporting and resolving any fraudulent activity.</span></li>
-          <li><i class="bi bi-check"></i> <span>A dedicated support team and transparent process for all transaction issues.</span></li>
-          <li><i class="bi bi-check"></i> <span>Secure escrow holds payments until ticket authenticity is confirmed.</span></li>
-        </ul>
-      </div>
-    </div><div class="row gy-4 align-items-center features-item">
-      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-        <img src="assets/img/features-1.svg" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7" data-aos="fade-up">
-        <h3>Powerful Admin Dashboard</h3>
-        <p>Maintain the integrity and health of the marketplace with powerful administrative tools.</p>
-        <ul>
-          <li><i class="bi bi-check"></i> <span>Comprehensive monitoring tools for tracking all platform activity in real-time.</span></li>
-          <li><i class="bi bi-check"></i><span> Real-time analytics on sales, user trends, and dispute resolutions.</span></li>
-          <li><i class="bi bi-check"></i> <span>Tools to intervene in disputes, flag suspicious behavior, and ensure a secure marketplace.</span></li>
-        </ul>
-      </div>
-    </div></div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script id="scroll-animations">
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.section-animate').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
-</section>
+    <script id="phone-animations">
+        document.addEventListener('DOMContentLoaded', function() {
+            const phones = document.querySelectorAll('.phone-mockup');
+            const phoneObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const phone = entry.target;
+                        const phoneInner = phone.querySelector('.phone-inner');
+                        if (phone.id === 'about-phone' || phone.id === 'innovation-phone') {
+                            phoneInner.style.transform = 'rotateY(0deg) rotateX(0deg) translateX(0px)';
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            phones.forEach(phone => {
+                phoneObserver.observe(phone);
+            });
+        });
+    </script>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <p>A glimpse into the vibrant world of events and happy fans powered by Tixup.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "centeredSlides": true,
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 0
-                },
-                "768": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 30
-                },
-                "992": {
-                  "slidesPerView": 5,
-                  "spaceBetween": 30
-                },
-                "1200": {
-                  "slidesPerView": 7,
-                  "spaceBetween": 30
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', function() {
+                const isOpen = mobileMenu.classList.contains('max-h-[160px]');
+                if (isOpen) {
+                    mobileMenu.classList.remove('max-h-[160px]');
+                    mobileMenu.classList.add('max-h-0');
+                } else {
+                    mobileMenu.classList.remove('max-h-0');
+                    mobileMenu.classList.add('max-h-[160px]');
                 }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-1.png"><img src="assets/img/app-gallery/app-gallery-1.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-2.png"><img src="assets/img/app-gallery/app-gallery-2.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-3.png"><img src="assets/img/app-gallery/app-gallery-3.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-4.png"><img src="assets/img/app-gallery/app-gallery-4.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-5.png"><img src="assets/img/app-gallery/app-gallery-5.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-6.png"><img src="assets/img/app-gallery/app-gallery-6.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-7.png"><img src="assets/img/app-gallery/app-gallery-7.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-8.png"><img src="assets/img/app-gallery/app-gallery-8.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-9.png"><img src="assets/img/app-gallery/app-gallery-9.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-10.png"><img src="assets/img/app-gallery/app-gallery-10.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-11.png"><img src="assets/img/app-gallery/app-gallery-11.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-12.png"><img src="assets/img/app-gallery/app-gallery-12.png" class="img-fluid" alt=""></a></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Gallery Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
-    
-
-    <section id="faq" class="faq section">
-
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Frequently Asked Questions</h2>
-    <p>We've compiled some of the most common questions to help you understand how Tixup works and what makes us a secure and reliable choice for your ticketing needs.</p>
-  </div><div class="container">
-
-    <div class="row justify-content-center">
-
-      <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="faq-container">
-
-          <div class="faq-item faq-active">
-            <h3>What is Tixup?</h3>
-            <div class="faq-content">
-              <p>Tixup is a smart marketplace for reselling event tickets. Our platform is designed to make buying and selling tickets seamless, secure, and accessible, ensuring that changing plans never means wasted tickets and every transaction is protected from fraud.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><div class="faq-item">
-            <h3>How does Tixup prevent fraud?</h3>
-            <div class="faq-content">
-              <p>We use advanced verification systems and a secure payment escrow process. Payments are held until the ticket's authenticity is confirmed, protecting both buyers and sellers. Our dedicated support team also actively monitors the platform for any suspicious activity and helps resolve disputes.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><div class="faq-item">
-            <h3>What kinds of events can I find on Tixup?</h3>
-            <div class="faq-content">
-              <p>You can find tickets for a wide range of live events, including concerts, sports matches, movies, comedy shows, and more. Our platform covers both large-scale and local events to ensure you can always find a ticket for your favorite experience.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><div class="faq-item">
-            <h3>How are your fees structured?</h3>
-            <div class="faq-content">
-              <p>Tixup is committed to transparency. We have a clear and competitive fee structure with no hidden costs. Our goal is to provide a fair and trustworthy marketplace for everyone, which is why we ensure all fees are communicated upfront.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><div class="faq-item">
-            <h3>How do I sell a ticket on Tixup?</h3>
-            <div class="faq-content">
-              <p>Selling a ticket is effortless. Simply create an account, upload the ticket details, set your desired price, and our smart prompts will guide you through the process. Once a buyer purchases your ticket, our secure system handles the transaction and delivery.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><div class="faq-item">
-            <h3>What if there is a problem with my purchase?</h3>
-            <div class="faq-content">
-              <p>We offer robust dispute resolution to protect both buyers and sellers. Our built-in system allows you to report any issues, and our dedicated support team will intervene to ensure a fair and transparent resolution. Your payment is held in escrow until the ticket authenticity is confirmed.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div></div>
-
-      </div></div>
-
-  </div>
-
-</section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Join us in shaping the future of live experiences—smarter, safer, and more accessible for everyone.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>B-XXI-3188/4, Zone C, Janta Nagar, Ludhiana, Punjab 141003</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+91-7717368146</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>inside@porfyro.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">SoftLand</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">SoftLand</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('max-h-[160px]');
+                    mobileMenu.classList.add('max-h-0');
+                });
+            });
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                    mobileMenu.classList.remove('max-h-[160px]');
+                    mobileMenu.classList.add('max-h-0');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
